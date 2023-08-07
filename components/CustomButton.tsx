@@ -1,19 +1,9 @@
 'use client';
 
+import { CustomButtonProps } from '@/types';
 import Image from 'next/image';
-import { MouseEventHandler } from 'react';
 
-interface CustomButtonProps {
-	title: string;
-	containerStyles?: string;
-	handleClick?: MouseEventHandler<HTMLButtonElement>;
-	btnType?: 'button' | 'submit';
-	textStyle?: string;
-	rightIcon?: string;
-	isDisabled?: boolean;
-}
-
-const CustomButton: React.FC<CustomButtonProps> = ({ title, containerStyles, handleClick, btnType, textStyle, rightIcon }) => {
+const CustomButton = ({ title, containerStyles, handleClick, btnType, textStyle, rightIcon }: CustomButtonProps) => {
 	return (
 		<button disabled={false} type={btnType || 'button'} className={`custom-btn ${containerStyles} `} onClick={handleClick}>
 			<span className={`flex-1 ${textStyle}`}>{title}</span>

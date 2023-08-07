@@ -1,14 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { carProps } from './CarCard';
 import Image from 'next/image';
 import { generateCarImageUrl } from '@/utils';
-
-interface CarDetailsProps {
-	isOpen: boolean;
-	closeModal: () => void;
-	car: carProps;
-}
+import { CarDetailsProps } from '@/types';
 
 const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
 	return (
@@ -62,7 +56,6 @@ const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
 											{Object.entries(car).map(([key, value]) => (
 												<div className="flex justify-between gap-5 w-full text-right" key={key}>
 													<h4 className=" text-grey">{key.replace('_', ' ')}</h4>
-													{/* <h4 className=" text-grey">{key.split('_').join(' ')}</h4> */}
 													<p className="text-black-100 font-semibold">{value}</p>
 												</div>
 											))}
