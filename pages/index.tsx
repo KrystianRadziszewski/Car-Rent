@@ -21,7 +21,6 @@ export default function Home({}) {
 	const [limit, setLimit] = useState(10);
 
 	useEffect(() => {
-		console.log(manufacturer, year, fuel, limit, model);
 		const fetchData = async () => {
 			setLoading(true);
 			try {
